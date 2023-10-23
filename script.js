@@ -21,7 +21,7 @@ const gridMatrix = [
   [1, 1, 1, 0, 0, 0]
 ];
 
-// Prepariamo delle informazioni necessarie alla logia di gioco
+// Prepariamo delle informazioni necessarie alla logica del gioco
 let currentRowIndex = gridMatrix.length - 1;
 let barDirection = 'right';
 let barSize = 3;
@@ -35,14 +35,15 @@ function draw () {
 
   gridMatrix.forEach(function (rowContent, rowIndex) {
     rowContent.forEach(function (cellContent, cellIndex) {
-      // Creiamo una cella
+
+  //creiamo la cella ossia il div
       const cell = document.createElement('div');
       cell.classList.add('cell');
 
-      // Stile scacchiera
+      // lo stile facciamo a scacchiera quindi mi serve riga pari e cella pari
       const isRowEven = rowIndex % 2 === 0;
       const isCellEven = cellIndex % 2 === 0;
-
+      //le celle sono dispari mettiamo le celle scure
       if ((isRowEven && isCellEven) || (!isRowEven && !isCellEven)) {
         cell.classList.add('cell-dark');
       }
