@@ -7,7 +7,7 @@ const endGameText = document.querySelector('.end-game-text');
 const playAgainButton = document.querySelector('.play-again');
 const endGameImg = document.querySelector('.endgame-img');
 
-// Creiamo la matrice per la nostra griglia
+// Creiamo la matrice per la nostra griglia 6x8
 // 0 - grid
 // 1 - bar
 const gridMatrix = [
@@ -32,7 +32,7 @@ let t;
 
 function draw () {
   grid.innerHTML = '';
-
+//creiamo un ciclo forEach per la nostra matrice
   gridMatrix.forEach(function (rowContent, rowIndex) {
     rowContent.forEach(function (cellContent, cellIndex) {
 
@@ -102,7 +102,7 @@ function checkLost () {
   const currentRow = gridMatrix[currentRowIndex];
   const prevRow = gridMatrix[currentRowIndex + 1];
 
-  // se non esiste una riga precedente (inizio gioco)
+  // se non esiste una riga precedente (inizio il gioco)
   // allo esco dalla funzione
   if (!prevRow) return;
 
